@@ -81,11 +81,16 @@ body {
 
 .temperature {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .temperature .description {
   font-size: 18px;
+}
+
+.details {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .hourly-forecast {

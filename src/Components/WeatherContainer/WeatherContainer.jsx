@@ -71,6 +71,10 @@ const WeatherReport = () => {
                 <div className="description">{weather.current.condition.text}</div>
                 <div className="temp">{weather.current.temp_c}°C</div>
               </div>
+              <div className="details">
+                <div>Humidity: {weather.current.humidity}%</div>
+                <div>Wind Speed: {weather.current.wind_kph} kph</div>
+              </div>
               <div className="hourly-forecast">
                 <div className="hour">
                   <div className="icon small sun-behind-cloud"></div>
