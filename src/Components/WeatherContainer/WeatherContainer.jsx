@@ -21,10 +21,15 @@ const WeatherReport = () => {
       setLoading(true);
       const response = await fetch(url, options);
       const result = await response.json();
-      setWeather(result);
-      setError(null);
+      if (result.error) {
+        setWeather(null);
+        setError(`No region could be found with the given name: ${location}`);
+      } else {
+        setWeather(result);
+        setError(null);
+      }
     } catch (error) {
-      setError(error);
+      setError(error.message);
     } finally {
       setLoading(false);
     }
@@ -37,6 +42,11 @@ const WeatherReport = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setQuery(search);
+  };
+
+  const handleReload = () => {
+    setQuery('New York'); // Reset to default location
+    setSearch('');
   };
 
   return (
@@ -54,7 +64,14 @@ const WeatherReport = () => {
 
       <div className="weather-container">
         {loading && <div>Loading...</div>}
-        {error && <div>Error: {error.message}</div>}
+        {error && (
+          <div className="error-message">
+            {error}
+            <button className="reload-button" onClick={handleReload}>
+              <b>Reload</b>
+            </button>
+          </div>
+        )}
 
         {weather && (
           <>

@@ -110,3 +110,22 @@ body {
   font-size: 14px;
   margin-top: 5px;
 }
+
+.error-message {
+  color: #ff4c4c;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.reload-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.reload-button:hover {
+  color: #ff4c4c;
+}
