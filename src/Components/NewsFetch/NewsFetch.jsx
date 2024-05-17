@@ -16,4 +16,4 @@ async function WeatherReport() {
     console.error(error);
   }
 }
-WeatherReport();
+export default WeatherReport;
